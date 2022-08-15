@@ -1,12 +1,10 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, {useState, useEffect} from 'react'
+import { Link,  useNavigate} from 'react-router-dom' 
 import logo from '../img/logo.svg'
 import google from '../img/Google Plus.svg'
 import twitter from '../img/Twitter.svg'
 import discord from '../img/Discord New.svg'
 import '../scss/form.scss'
-import { useState } from 'react'
-import { useEffect } from 'react'
 
 export default function Login() {
     const [email, setEmail] = useState("")
@@ -36,10 +34,6 @@ export default function Login() {
         } else {
             setEmailError("")
         }
-
-        console.log(localStorage.getItem("name"))
-       
-
     }
 
     const passwordHandler = (e) => {
@@ -55,8 +49,22 @@ export default function Login() {
         }
     }
 
-    function formSubmit() {
-        localStorage.setItem("name", email)
+    const navigate = useNavigate();
+    function formSubmit(event) {
+        const emailUser = localStorage.getItem("email")
+        const passwordUser = localStorage.getItem("password")
+
+        if(emailUser ===  email && passwordUser === password) {
+        return  navigate("/Home", {replace: true})
+
+        } else if(emailUser !==  email) {
+            setEmailError("Непарвильный email!")
+            return false
+        }else if(passwordUser !==  password) {
+            setPasswordError("Неправильный пароль!")
+            return false
+        
+        }
     }
 
     const blurHandler = (e) => {
@@ -71,11 +79,9 @@ export default function Login() {
         }
     }
 
-
-
   return (
     <div className="form-container">
-        <form className="form">
+        <form className="form" onSubmit={e=> e.preventDefault()}>
             <img src={logo} alt="My List" />
             <h1>Join</h1>
             {(emailDirty && emailError) && <div className="err" >{emailError}</div>}
@@ -84,7 +90,7 @@ export default function Login() {
             <input onChange={e => passwordHandler(e)} value={password} onBlur={e => blurHandler(e)} type="password" name="password" placeholder="Enter your password..."></input>
             <div className="registraition__content">
                 <Link to="/Registration">Registration</Link>
-                <Link to="/Home"> <button onClick={formSubmit} disabled={!formValid} className={formValid ? "button form-valid" : "button"} type="submit">Sing in</button></Link>
+                <button onClick={formSubmit} disabled={!formValid} className={formValid ? "button form-valid" : "button"} type="submit">Sing in</button>
             </div>
             <Link className="forgot" to="/ForgotPassword">forgot password</Link>
             <div className="icon">

@@ -15,7 +15,7 @@ export default function FilmsPage() {
 
 const getMoviDefault = async () => {
   const popularUrl = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=b52ea45bd4ccc863f946594d20229362";
-    const url =        " https://api.themoviedb.org/3/search/movie?api_key=b52ea45bd4ccc863f946594d20229362&query=spider+man";
+    // const url =        " https://api.themoviedb.org/3/search/movie?api_key=b52ea45bd4ccc863f946594d20229362&query=spider+man";
     
     
     const response = await fetch(popularUrl);

@@ -69,7 +69,7 @@ export default function Registration() {
 
     const nameHandler = (e) => {
         setName(e.target.value)
-        if(e.target.value.length < 6 ) {
+        if(e.target.value.length < 3 ) {
             setNameError("Слишком короткое имя")
             // if(!e.target.value.length) {
             //     setNameError("Name не может быть пустым")
@@ -96,6 +96,12 @@ export default function Registration() {
         }
     }
 
+    function createUser() {
+        localStorage.setItem("email",email)
+        localStorage.setItem("password",password)
+        localStorage.setItem("name",name)
+    }
+
 
 
   return (
@@ -117,7 +123,7 @@ export default function Registration() {
             <input onChange={e => nameHandler(e)} value={name} onBlur={e => blurHandler(e)} type="text" name="userName" placeholder="User Name"></input>
             <div className="registraition__content">
                 <Link to="/">Log in</Link>
-                <Link to="/"><button disabled={!formValid} className={formValid ? "button form-valid" : "button"} type="submit">Registretion</button></Link>
+                <Link to="/"><button onClick={createUser} disabled={!formValid} className={formValid ? "button form-valid" : "button"} type="submit">Registretion</button></Link>
             </div>
         </form>
     </div>

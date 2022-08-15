@@ -16,7 +16,7 @@ export default function FilmsPage() {
   
   const getMoviDefault = async () => {
     const popularUrl = "https://api.themoviedb.org/3/tv/popular?api_key=b52ea45bd4ccc863f946594d20229362&language=en-US&page=1";
-      const url =        " https://api.themoviedb.org/3/search/movie?api_key=b52ea45bd4ccc863f946594d20229362&query=spider+man";
+      // const url =        " https://api.themoviedb.org/3/search/movie?api_key=b52ea45bd4ccc863f946594d20229362&query=spider+man";
       
       
       const response = await fetch(popularUrl);
@@ -29,17 +29,10 @@ export default function FilmsPage() {
   } 
       
   const getMoviesRequst = async (searchValue) => {
-      const apiKey = "b52ea45bd4ccc863f946594d20229362";
-      // const baseUrl = `https://api.themoviedb.org/3${}}&api_key=b52ea45bd4ccc863f946594d20229362`;
-      // const popularUrl = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=b52ea45bd4ccc863f946594d20229362";
-      const url =        `https://api.themoviedb.org/3/search/movie?api_key=b52ea45bd4ccc863f946594d20229362&query=${searchValue}`;
-      
-      
-      const popularUrl = "https://api.themoviedb.org/3/tv/popular?api_key=b52ea45bd4ccc863f946594d20229362&language=en-US&page=1";
-   
+    // const popularUrl = "https://api.themoviedb.org/3/tv/popular?api_key=b52ea45bd4ccc863f946594d20229362&language=en-US&page=1";
+      const url = `https://api.themoviedb.org/3/search/tv?api_key=b52ea45bd4ccc863f946594d20229362&query=${searchValue}`;
 
-
-      const response = await fetch(popularUrl);
+      const response = await fetch(url);
       const responseJson = await response.json();
   
       if(responseJson.results ) {
@@ -56,10 +49,6 @@ export default function FilmsPage() {
     useEffect(()=>{
       getMoviesRequst(searchValue);
     },[searchValue])
-  
-  
-  
-  
   
   
   return (

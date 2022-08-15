@@ -1,0 +1,124 @@
+// @import "header.scss";
+.bg-films {
+    background-image: linear-gradient( #B3B576, black);
+    width: 100%;
+    // height: 100vw;
+}
+.bg-tv {
+    background-image: linear-gradient( #AB7373, black);
+    width: 100%;
+}
+
+.bg-anime {
+    background-image: linear-gradient( #4E66BE, black);
+    width: 100%;
+}
+
+.bg-book {
+    background-image: linear-gradient( #2C6E5B, black);
+    width: 100%;
+}
+
+
+.wrap {
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    .search-form{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 70px;
+        height: 20px;
+    }
+    .content {
+        width: 80%;
+        min-height: 2200px;
+        background-color: white;
+        padding:0 50px;
+        box-sizing: border-box;
+    }
+    .genre{
+        width: 18%;
+        background-color: white;
+        box-sizing: border-box;
+        padding: 20px 15px;
+    }
+}
+
+.container-films{
+    width: 95%;
+    margin: 50px auto;
+    .films-films__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .films-films__item{
+            position: relative;
+            transition: transform 0.2s;
+            width: 22%;
+            .poster{
+                width: 100%;
+            height: 270px;
+            cursor: pointer;
+            &:hover {
+                transform: scale(1.1);
+            }
+
+                // height: 300px;
+                margin-bottom: 15px;
+            }
+        span {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+        .films-img {
+            width: 180px;
+            height: 270px;
+            margin-bottom: 10px;
+        }
+        .films-films__title-vote_average {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+           & .star {
+            width: 30px;
+           }
+        }
+        // .films-films__title-vote_average .star {
+        //     width: 10px;
+        // }
+        }
+       
+        // img {
+        //     width: 200px;
+        // }
+    }
+}
+
+// checkbox
+.chek-list {
+    display: flex;
+    flex-direction: column;
+    & input {
+        margin-bottom: 10px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

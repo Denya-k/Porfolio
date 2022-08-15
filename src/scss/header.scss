@@ -1,0 +1,207 @@
+// @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+// body
+body {
+    background-image: linear-gradient( #602BA0, black);
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+// end body
+
+// header
+.header{
+    background-color: #282828;
+    width: 100%;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    &-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+    color: white;
+
+    }
+    &-logo__img {
+        width: 85px;
+    }
+    &-nav {
+        width: 60%;
+        display: flex;
+        justify-content: space-around;
+    }
+    &-nav__link {
+        font-size: 20px;
+        color: #FFFFFF99;
+        text-decoration: none;
+        cursor: pointer;
+        &:hover {
+            color: white;
+        }
+    }
+    &-login__img {
+        height: 32px;
+    }
+    &-login__text {
+        font-size: 20px;
+        text-decoration: none;
+        color: white;
+        cursor: pointer;
+    }
+    &-login {
+        display: flex;
+        align-items: center;
+    }
+}
+ .active {
+    color: rgb(159, 141, 238);
+ } 
+// end header
+
+// search
+.search{
+    &-search__input {
+        border: 0.2px solid #000;
+        border-radius: 20px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        // margin-left: 100px;
+        padding: 5px 5px 5px 40px;
+        height: 20px;
+        background: url("../img/Search.svg") no-repeat 3px 1px;
+        background-size: auto 90%;
+    }
+}
+// end search
+
+// // // home
+// // .container{
+// //     width: 85%;
+// //     margin: 0 auto;
+// // }
+
+// // .wrapper {
+// //     width: 100%;
+// //     padding-top: 100px;
+// //     padding-bottom: 1px;
+// //     max-width: 1200px;
+// //     margin: 0 auto;
+// //     // padding-bottom: 100px;
+// //     background-color: white;
+// //     &-section-top {
+// //         height: 500px;
+// //         background-color: #E5E5E5;
+// //         margin-bottom: 100px;
+// //         .container{
+// //             padding-top: 20px;
+// //         }
+// //     }
+// // }
+
+
+// // //  Section Movie
+
+// //     @mixin section__list {
+// //         display: flex;
+// //             justify-content: space-between;
+// //     }
+// //     @mixin section__item {
+// //         width: 22%;
+// //             img{
+// //                 width: 100%;
+// //                 height: 300px;
+// //                 margin-bottom: 15px;
+// //             }
+// //     }
+// //     @mixin section__title {
+// //         display: block;
+// //         font-weight: 600;
+// //     }
+    
+
+// //     .movie {
+// //         &-movie__list {
+// //             display: flex;
+// //             justify-content: space-between;
+// //         }
+// //         &-movie__item {
+// //             width: 22%;
+// //             img{
+// //                 width: 100%;
+// //                 height: 300px;
+// //                 margin-bottom: 15px;
+// //             }
+// //         }
+// //         &-movie__title{
+// //             display: block;
+// //             font-weight: 600;
+// //         }
+// //     }
+
+// //     .movie {
+// //         &-movie__list {
+// //             @include section__list
+// //         }
+// //         &-movie__item {
+// //             @include section__item
+
+// //         }
+// //         &-movie__title{
+// //             @include section__title
+
+// //         }
+// //     }
+// // //  END Section Movie
+
+// // //   Section Series
+// // .series {
+// //     &-series__list {
+// //         @include section__list
+// //     }
+// //     &-series__item {
+// //         @include section__item
+
+// //     }
+// //     &-series__title{
+// //         @include section__title
+
+// //     }
+// // }
+// // //  END Section Series
+
+// // //   anime Series
+// // .anime {
+// //     &-anime__list {
+// //         @include section__list
+// //     }
+// //     &-anime__item {
+// //         @include section__item
+
+// //     }
+// //     &-anime__title{
+// //         @include section__title
+
+// //     }
+// // }
+// // //  END anime Series
+
+
+// // // end home
+
+// footer
+    .footer{
+        background-color:#575757;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 75px;
+        img{
+            width: 60px;
+            cursor: pointer;
+        }
+    }
+// end footer

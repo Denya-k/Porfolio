@@ -1,0 +1,94 @@
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+
+    padding: 50px;
+    width: 100vw;
+    height: 100vh;
+
+   .form {
+    .err {
+        color: red;
+        font-size: 15px;
+    }
+    // background-color: white;
+    background-image: linear-gradient(#4E66BE, black);
+    display: flex;
+    flex-direction: column;
+    padding: 50px 170px;
+    box-sizing: border-box;
+    width: 611px;
+    // height: 630px;
+    border-radius: 30px;
+    text-align: center;
+    input {
+        margin-bottom: 20px;
+        margin-top: 5px;
+        border-radius: 50px;
+        padding: 12px 15px;
+        outline: none;
+        border: none;
+    }
+    .icon {
+        // background-color: black;
+        a {
+            margin-right: 5px;
+        }
+    }
+    .registraition__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+        margin-top: 10px;
+        a {
+            text-decoration: none;
+            color: wheat;
+            &:hover {
+                color: white;
+            }
+        }
+        .button {
+            outline: none;
+            // background-color: #6A9BBF;
+            border: none;
+            border-radius: 30px;
+            padding: 10px 20px;
+            cursor: pointer;
+
+            &.form-valid {
+                border-color: #3498db;
+                color: #fff;
+                background-color: #6A9BBF;
+                box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
+                -webkit-transition: all 150ms ease-in-out;
+                transition: all 150ms ease-in-out;
+                &:hover {
+                    box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
+                }
+            }
+
+    
+            
+        
+        }
+    }
+    .forgot {
+        text-align: right;
+        margin-bottom: 20px;
+        text-decoration: none;
+        color: wheat;
+        font-size: 14px;
+        &:hover {
+            color: white;
+        }
+    }
+    .registratiom-massage {
+        color: #ccc;
+    }
+   }
+}
+
+

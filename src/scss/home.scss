@@ -1,0 +1,120 @@
+@import "header.scss";
+
+// body
+body {
+    // background-image: linear-gradient( #602BA0, black);
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+// end body
+
+
+
+// home
+.container{
+    width: 85%;
+    margin: 0 auto;
+}
+
+.wrapper {
+    width: 100%;
+    padding-top: 100px;
+    padding-bottom: 1px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    &-section-top {
+        height: 500px;
+        background-color: #E5E5E5;
+        margin-bottom: 100px;
+        .container{
+            padding-top: 20px;
+        }
+    }
+}
+
+// 
+
+// 
+
+
+//  Section Movie
+
+    @mixin section__list {
+        display: flex;
+        justify-content: space-between;
+        overflow-x: scroll;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        &::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+      }
+    }
+    @mixin section__item {
+        position: relative;
+        margin-right: 10px;
+            img{
+                width: 200px;
+                height: 300px;
+                margin-bottom: 15px;
+                cursor: pointer;
+                
+            }
+    }
+    @mixin section__title {
+        display: block;
+        font-weight: 600;
+    }
+   
+
+    .movie {
+        &-movie__list {
+            @include section__list
+        }
+        &-movie__item {
+            @include section__item
+
+        }
+        &-movie__title{
+            @include section__title
+
+        }
+    }
+//  END Section Movie
+
+//   Section Series
+.series {
+    &-series__list {
+        @include section__list
+    }
+    &-series__item {
+        @include section__item
+
+    }
+    &-series__title{
+        @include section__title
+
+    }
+}
+//  END Section Series
+
+//   anime Series
+.anime {
+    &-anime__list {
+        @include section__list
+    }
+    &-anime__item {
+        @include section__item
+
+    }
+    &-anime__title{
+        @include section__title
+
+    }
+}
+//  END anime Series
+
+
+// end home

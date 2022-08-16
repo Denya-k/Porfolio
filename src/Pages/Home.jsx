@@ -24,7 +24,6 @@ export default function Home() {
   const bookslarUrl = "https://www.googleapis.com/books/v1/volumes?q=search+terms";
 
   const getRequestDefault = async (moviesrUrl,serialsUrl,animesrUrl,bookslarUrl) => {
-    setLoading(true)
 
     const moviesResponse = await fetch(moviesrUrl);
     const moviesResponseJson = await moviesResponse.json();
@@ -41,6 +40,9 @@ export default function Home() {
     const booksResponse = await fetch(bookslarUrl);
     const booksResponseJson = await booksResponse.json();
     setBooks(booksResponseJson.items);
+
+    setLoading(true)
+
   
   }
 
@@ -53,7 +55,7 @@ export default function Home() {
     <Header />
       <div className="wrapper">
       {loading ? <>
-        <Movie movies={movie}/>
+            <Movie movies={movie}/>
             <Serials serials={serials}/>
             <Anime anime={anime} />
             <Books books={books} />

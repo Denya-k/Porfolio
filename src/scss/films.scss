@@ -128,10 +128,6 @@
     }
 }
 
-
-
-
-
 // checkbox
 .chek-list {
     display: flex;
@@ -139,6 +135,12 @@
     & input {
         margin-bottom: 10px;
     }
+}
+
+// not found err
+
+.not__found {
+    text-align: center;
 }
 
 

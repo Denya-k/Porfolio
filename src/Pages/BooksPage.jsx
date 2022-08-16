@@ -5,15 +5,14 @@ import Loader from '../Components/Loader'
 import BooksList from './BooksList'
 import '../scss/loader.scss'
 import Layout from '../Components/Layout'
-
-
-
-
+import NotFound from '../Components/NotFound'
 
 export default function BooksPage() {
   const [books, setBooks] = useState([]);
   const [searchValue, setSearchValue] = useState("");
   const [loading, setLoading] = useState(false);
+  const [notFound, setNotFound] = useState(false);
+
 
 const getBooksDefault = async () => {
   const popularUrl = "https://www.googleapis.com/books/v1/volumes?q=search+terms";
@@ -31,12 +30,24 @@ const getBooksRequst = async (searchValue) => {
         
     const url = `https://www.googleapis.com/books/v1/volumes?q=${searchValue}`;
     
-    const response = await fetch(url);
-    const responseJson = await response.json();
-    setLoading(true);
-    if(responseJson.items ) {
-        setBooks(responseJson.items)
-    } 
+    if(searchValue) {
+      const response = await fetch(url);
+      const responseJson = await response.json();
+      if(responseJson.items &&  responseJson.items.length !== 0) {
+        setBooks(responseJson.items);
+        setNotFound(false);
+      }  else {
+        setNotFound(true);
+      }
+    }
+
+
+    // const response = await fetch(url);
+    // const responseJson = await response.json();
+    
+    // if(responseJson.items ) {
+    //     setBooks(responseJson.items)
+    // } 
    
   }
 
@@ -45,15 +56,15 @@ const getBooksRequst = async (searchValue) => {
     getBooksRequst(searchValue)
   },[searchValue])
 
-  // useEffect(()=>{
-  //   getBooksRequst(searchValue);
-  // },[searchValue])
+  useEffect(()=>{
+    getBooksRequst(searchValue);
+  },[searchValue])
 
 
 return (
     <div className="bg-book">
         <Layout
-            children={loading ? <BooksList book={books}/> : <Loader />} 
+           children={loading ? (notFound ? <NotFound /> : <BooksList book={books}/>): <Loader />}
             search={<Search searchValue={searchValue} setSearchValue={setSearchValue}/> }
           />
     </div>

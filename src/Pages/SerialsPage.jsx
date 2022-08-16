@@ -3,55 +3,55 @@ import Layout from '../Components/Layout'
 import Loader from '../Components/Loader'
 import Search from '../Components/Search'
 import SerialsList from './SerialsList'
+import NotFound from '../Components/NotFound'
+
 
 
 export default function SerialsPage() {
-    const [movies, setMovies] = useState([]);
+    const [serials, setSerials] = useState([]);
     const [searchValue, setSearchValue] = useState("");
     const [loading, setLoading] = useState(false);
+    const [notFound, setNotFound] = useState(false);
 
-  
-  const getMoviDefault = async () => {
+  const getSerialsDefault = async () => {
     const popularUrl = "https://api.themoviedb.org/3/tv/popular?api_key=b52ea45bd4ccc863f946594d20229362&language=en-US&page=1";
-      // const url =        " https://api.themoviedb.org/3/search/movie?api_key=b52ea45bd4ccc863f946594d20229362&query=spider+man";
-      
-      
       const response = await fetch(popularUrl);
       const responseJson = await response.json();
   
-      setMovies(responseJson.results)
+      setSerials(responseJson.results)
       setLoading(true)
-  
-  
   } 
       
-  const getMoviesRequst = async (searchValue) => {
-    // const popularUrl = "https://api.themoviedb.org/3/tv/popular?api_key=b52ea45bd4ccc863f946594d20229362&language=en-US&page=1";
-      const url = `https://api.themoviedb.org/3/search/tv?api_key=b52ea45bd4ccc863f946594d20229362&query=${searchValue}`;
-
+  const getSerialsRequst = async (searchValue) => {
+    const url = `https://api.themoviedb.org/3/search/tv?api_key=b52ea45bd4ccc863f946594d20229362&query=${searchValue}`;
+    
+    if(searchValue) {
       const response = await fetch(url);
       const responseJson = await response.json();
-  
-      if(responseJson.results ) {
-        setMovies(responseJson.results)
-      } 
-      setLoading(true)
-
+      if(responseJson.results &&  responseJson.results.length !== 0) {
+        setSerials(responseJson.results);
+        setNotFound(false);
+      }  else {
+        setNotFound(true);
+      }
     }
+    
+
+  }
   
-    useEffect(()=>{
-      getMoviDefault();
-    },[])
-  
-    useEffect(()=>{
-      getMoviesRequst(searchValue);
-    },[searchValue])
+  useEffect(()=>{
+    getSerialsDefault();
+  },[])
+
+  useEffect(()=>{
+    getSerialsRequst(searchValue);
+  },[searchValue])
    
   
   return (
       <div className="bg-tv">
           <Layout
-           children={loading ? <SerialsList movies={movies} /> : <Loader /> }
+           children={loading ? (notFound ? <NotFound /> : <SerialsList serials={serials} />): <Loader />}
            search={<Search searchValue={searchValue} setSearchValue={setSearchValue}/> }
            />
       </div>

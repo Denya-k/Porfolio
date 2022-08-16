@@ -55,8 +55,37 @@ body {
     @mixin section__item {
         position: relative;
         margin-right: 10px;
-        overflow-y: hidden;
-        width: 400px;
+        .more {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background-color: rgba(0,0,0,.5);
+            padding-top: 100%;
+            text-align: center;
+            opacity: 0;
+            transition: all .5s;
+            -webkit-transition: all .5s;
+            -o-transition: all .5s;
+            .link {
+                display: block;
+                text-decoration: none;
+                padding: 15px;
+                width: 50%;
+                color: #fff;
+                background: #000;
+                border-radius: 5px;
+                margin: 0 auto;
+                
+                transition: all 0.4s ease-in-out;
+                &:hover {
+                    background: #454545;
+                    color: #fff;
+                }
+            }
+            }
+           
             img{
                 width: 200px;
                 height: 300px;
@@ -64,6 +93,11 @@ body {
                 cursor: pointer;
                 
             }
+        &:hover .more {
+            opacity: 1;
+        }
+
+      
     }
     @mixin section__title {
         display: block;
@@ -121,83 +155,3 @@ body {
 
 // end home
 
-.effect-to-top {
-    background-color: grey;
-    opacity: 0.7;
-    width: 100%;
-    height: 300px;
-    top: 300px;
-    left: 0;
-    position: absolute;
-    transform: translateY(-100%);
-    transition: transform 1s linear;
-  }
-  
-  .movie-movie__item:hover .effect-to-top {
-    transform: translateY(0);
-  }
-
-
-
-
-
-
-
-/* Настройки маркированного списка */
-// .hover-effect-cover {
-//     // overflow-y: hidden;
-//     height: 300px;
-// }
-// // .hover-effect-cover  {
-// //     position: relative;
-// //     background-color: #fff;
-// //     margin: 0;
-// //     border: 5px solid #fff;
-// //     box-shadow: 1px 3px 1px 0 rgba(0, 0, 0, 0.08);
-// // }
-
-
-// /* Заголовок, текст и ссылка */
-
-// .hover-effect-cover  a {
-//     display: block;
-//     text-decoration: none;
-//     padding: 15px;
-//     color: #fff;
-//     background: #000;
-//     border-radius: 5px;
-//     margin: 0 auto;
-//     transition: all 0.4s ease-in-out;
-// }
-// .hover-effect-cover  a:hover {
-//     background: #454545;
-//     color: #fff;
-// }
-
-// /* Выезжающий блок с текстом для панели снизу вверх */
-// // .hover-effect-cover li >
-//  div.effect-to-top {
-//     width: 100%;
-//     height: 84.5%;
-//     position: absolute;
-//     display: flex;
-//     justify-content: center;
-//     flex-direction: column;
-// }
-// .hover-effect-cover:hover > div.effect-to-top {
-//     position: absolute;
-//     overflow: hidden;
-//     top: 0;
-//     left: 0;
-// }
-// .hover-effect-cover  div.effect-to-top {
-//     opacity: 0;
-//     background-color: rgba(0, 0, 0, 0.3); /* Фон блока при наведении */
-//     transition: all 0.4s ease-in-out;
-//     color: #fff;
-//     transform: translate(0px, 250px) rotate(0deg); /* Направление выезжающей панели */
-// }
-// .hover-effect-cover:hover div.effect-to-top {
-//     opacity: 1;
-//     transform: translate(0px, 0px) rotate(0deg);
-// }

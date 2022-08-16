@@ -59,10 +59,10 @@ return (
                          searchValue={searchValue}
                          setSearchValue={setSearchValue} 
                         />  
-                        <span >&#709; rating</span>
+                        <span > rating &#709;</span>
                     </div>
 
-               {loading ? <MovieList movies={movies} />: <Loader />}
+                    {loading ? <MovieList movies={movies} />: <Loader />}
                 </div>
                 <Genre />
             </main>

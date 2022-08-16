@@ -1,18 +1,17 @@
 import React from "react";
-import Home from "./Components/Home";
+import Home from "./Pages/Home";
 import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Link,
 } from 'react-router-dom';
 import FilmsPage from "./Pages/FilmsPage";
 import TVShow from "./Pages/TVShow";
 import AnimePage from "./Pages/AnimePage";
 import BooksPage from "./Pages/BooksPage";
-import Login from "./Pages/Login";
-import Registration from "./Pages/Registration";
-import ForgotPassword from "./Pages/ForgotPassword";
+import Login from "./Pages/Login/Login";
+import Registration from "./Pages/Login//Registration";
+import ForgotPassword from "./Pages/Login//ForgotPassword";
 
 
 

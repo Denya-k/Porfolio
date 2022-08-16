@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from 'react'
 import { Link,  useNavigate} from 'react-router-dom' 
-import logo from '../img/logo.svg'
-import google from '../img/Google Plus.svg'
-import twitter from '../img/Twitter.svg'
-import discord from '../img/Discord New.svg'
-import '../scss/form.scss'
+import logo from '../../img/logo.svg'
+import google from '../../img/Google Plus.svg'
+import twitter from '../../img/Twitter.svg'
+import discord from '../../img/Discord New.svg'
+import '../../scss/form.scss'
 
 export default function Login() {
     const [email, setEmail] = useState("")

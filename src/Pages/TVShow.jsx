@@ -1,10 +1,7 @@
 import React , { useEffect,useState }  from 'react'
-import Footer from '../Components/Footer'
-import Genre from '../Components/Genre'
-import Header from '../Components/Header'
+import Layout from '../Components/Layout'
 import Loader from '../Components/Loader'
 import Search from '../Components/Search'
-import MovieList from './MovieList'
 import TVShowList from './TVShowList'
 
 
@@ -49,25 +46,14 @@ export default function FilmsPage() {
     useEffect(()=>{
       getMoviesRequst(searchValue);
     },[searchValue])
-  
+   
   
   return (
       <div className="bg-tv">
-          <Header />
-              <main className="wrap">
-                  <div className="content">
-                      <div className="search-form">
-                          <Search
-                           searchValue={searchValue}
-                           setSearchValue={setSearchValue} 
-                          />  
-                          <span>&#709; rating</span>
-                      </div>
-                      {loading ? <TVShowList movies={movies} /> : <Loader />}
-                    </div>
-                  <Genre />
-              </main>
-          <Footer />
+          <Layout
+           children={loading ? <TVShowList movies={movies} /> : <Loader /> }
+           search={<Search searchValue={searchValue} setSearchValue={setSearchValue}/> }
+           />
       </div>
      
     )

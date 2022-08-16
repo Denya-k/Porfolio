@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import logo from '../img/logo.svg'
-import '../scss/form.scss'
+import logo from '../../img/logo.svg'
+import '../../scss/form.scss'
 import { useState } from 'react'
 import { useEffect } from 'react'
 
@@ -89,7 +89,8 @@ export default function Registration() {
             break
             case "repeatPassword": 
             setRepeatPasswordDirty(true)
-            case "userName": 
+            break
+            case "name": 
             setNameDirty(true)
             break
 
@@ -120,7 +121,8 @@ export default function Registration() {
             <input onChange={e => repeatPasswordHandler(e)} value={repeatPassword} onBlur={e => blurHandler(e)} type="password" name="repeatPassword" placeholder="Repeat password..."></input>
             
             {(nameDirty && nameError) && <div className="err" >{nameError }</div>}
-            <input onChange={e => nameHandler(e)} value={name} onBlur={e => blurHandler(e)} type="text" name="userName" placeholder="User Name"></input>
+            <input onChange={e => nameHandler(e)} value={name} onBlur={e => blurHandler(e)} type="text" name="name" placeholder="User Name"></input>
+            
             <div className="registraition__content">
                 <Link to="/">Log in</Link>
                 <Link to="/"><button onClick={createUser} disabled={!formValid} className={formValid ? "button form-valid" : "button"} type="submit">Registretion</button></Link>

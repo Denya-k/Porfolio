@@ -1,7 +1,5 @@
 import React , { useEffect,useState }  from 'react'
-import Footer from '../Components/Footer'
-import Genre from '../Components/Genre'
-import Header from '../Components/Header'
+import Layout from '../Components/Layout'
 import Loader from '../Components/Loader'
 import Search from '../Components/Search'
 import '../scss/films.scss'
@@ -51,22 +49,11 @@ const getMoviesRequst = async (searchValue) => {
 
 return (
     <div className="bg-films">
-        <Header />
-            <main className="wrap">
-                <div className="content">
-                    <div className="search-form">
-                        <Search
-                         searchValue={searchValue}
-                         setSearchValue={setSearchValue} 
-                        />  
-                        <span > rating &#709;</span>
-                    </div>
 
-                    {loading ? <MovieList movies={movies} />: <Loader />}
-                </div>
-                <Genre />
-            </main>
-        <Footer />
+          <Layout
+            children={loading ? <MovieList movies={movies} />: <Loader />}
+            search={<Search searchValue={searchValue} setSearchValue={setSearchValue}/> }
+          />
     </div>
    
   )

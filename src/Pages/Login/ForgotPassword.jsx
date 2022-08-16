@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import logo from '../img/logo.svg'
-import '../scss/form.scss'
+import logo from '../../img/logo.svg'
+import '../../scss/form.scss'
 import { useState } from 'react'
 import { useEffect } from 'react'
 

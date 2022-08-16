@@ -1,7 +1,5 @@
 import React , { useEffect,useState }  from 'react'
-import Footer from '../Components/Footer'
-import Genre from '../Components/Genre'
-import Header from '../Components/Header'
+import Layout from '../Components/Layout';
 import Loader from '../Components/Loader';
 import Search from '../Components/Search';
 import AnimeList from './AnimeList';
@@ -49,26 +47,14 @@ export default function AnimePage() {
   
   
   
-  
+    
   
   return (
       <div className="bg-anime">
-          <Header />
-              <main className="wrap">
-                  <div className="content">
-                      <div className="search-form">
-                          <Search
-                           searchValue={searchValue}
-                           setSearchValue={setSearchValue} 
-                          />  
-                          <span>&#709; rating</span>
-                      </div>
-                      
-                      {loading ? <AnimeList anime={anime}/>: <Loader />}
-                  </div>
-                  <Genre />
-              </main>
-          <Footer />
+          <Layout
+            children={loading ? <AnimeList anime={anime}/>: <Loader />} 
+            search={<Search searchValue={searchValue} setSearchValue={setSearchValue}/> }
+          />
       </div>
      
     )

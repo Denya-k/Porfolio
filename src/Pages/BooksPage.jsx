@@ -1,13 +1,10 @@
 import React , { useEffect,useState }  from 'react'
-import Footer from '../Components/Footer'
-import Genre from '../Components/Genre'
-import Header from '../Components/Header'
-import Movie from '../Components/Sections/Movie'
 import Search from '../Components/Search'
 import '../scss/films.scss'
 import Loader from '../Components/Loader'
 import BooksList from './BooksList'
 import '../scss/loader.scss'
+import Layout from '../Components/Layout'
 
 
 
@@ -53,33 +50,18 @@ const getBooksRequst = async (searchValue) => {
   //   getBooksRequst(searchValue);
   // },[searchValue])
 
-  
-
-
-
-
-
 
 return (
     <div className="bg-book">
-        <Header />
-            <main className="wrap">
-                <div className="content">
-                    <div className="search-form">
-                        <Search
-                         searchValue={searchValue}
-                         setSearchValue={setSearchValue} 
-                        />  
-                        <span>&#709; rating</span>
-                    </div>
-
-               {/* <BooksList book={books}/> */}
-               {loading ? <BooksList book={books}/> : <Loader />} 
-                </div>
-                <Genre />
-            </main>
-        <Footer />
+        <Layout
+            children={loading ? <BooksList book={books}/> : <Loader />} 
+            search={<Search searchValue={searchValue} setSearchValue={setSearchValue}/> }
+          />
     </div>
    
   )
 }
+
+
+
+

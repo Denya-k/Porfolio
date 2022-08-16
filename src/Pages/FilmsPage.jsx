@@ -3,7 +3,7 @@ import Layout from '../Components/Layout'
 import Loader from '../Components/Loader'
 import Search from '../Components/Search'
 import '../scss/films.scss'
-import MovieList from './MovieList'
+import FilmsList from './FilmsList'
 
 
 export default function FilmsPage() {
@@ -51,7 +51,7 @@ return (
     <div className="bg-films">
 
           <Layout
-            children={loading ? <MovieList movies={movies} />: <Loader />}
+            children={loading ? <FilmsList movies={movies} />: <Loader />}
             search={<Search searchValue={searchValue} setSearchValue={setSearchValue}/> }
           />
     </div>

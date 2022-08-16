@@ -37,7 +37,6 @@ const getBooksRequst = async (searchValue) => {
     if(responseJson.items ) {
         setBooks(responseJson.items)
     } 
-    console.log(responseJson);
    
   }
 

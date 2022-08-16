@@ -1,7 +1,6 @@
 import React from 'react'
 import logo from '../img/logo.svg'
 import user from '../img/User.svg'
-// import '../scss/header.scss'
 import {
     BrowserRouter as Router,
     Routes,
@@ -24,7 +23,7 @@ export default function Header() {
                 <div className="header-nav">
                     <NavLink to="/Home" className="header-nav__link">Home</NavLink>
                     <NavLink to="/Films" className="header-nav__link">Films</NavLink>
-                    <NavLink to="/TVShow" className="header-nav__link">TV Show</NavLink>
+                    <NavLink to="/Serials" className="header-nav__link">Serials</NavLink>
                     <NavLink to="/Anime" className="header-nav__link">Anime</NavLink>
                     <NavLink to="/Book" className="header-nav__link">Books</NavLink>
                 </div>

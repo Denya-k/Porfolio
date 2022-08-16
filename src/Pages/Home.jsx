@@ -6,6 +6,8 @@ import Header from '../Components/Header'
 import Footer from '../Components/Footer'
 import '../scss/home.scss'
 import Serials from '../Components/Sections/Serials'
+import Loader from './../Components/Loader'
+
 
 
 export default function Home() {
@@ -13,6 +15,8 @@ export default function Home() {
   const [serials, setSerias] = useState([]);
   const [anime, setAnime] = useState([]);
   const [books, setBooks] = useState([]);
+  const [loading, setLoading] = useState(false);
+
  
   const moviesrUrl = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=b52ea45bd4ccc863f946594d20229362";
   const serialsUrl = "https://api.themoviedb.org/3/tv/popular?api_key=b52ea45bd4ccc863f946594d20229362&language=en-US&page=1";
@@ -20,6 +24,8 @@ export default function Home() {
   const bookslarUrl = "https://www.googleapis.com/books/v1/volumes?q=search+terms";
 
   const getRequestDefault = async (moviesrUrl,serialsUrl,animesrUrl,bookslarUrl) => {
+    setLoading(true)
+
     const moviesResponse = await fetch(moviesrUrl);
     const moviesResponseJson = await moviesResponse.json();
     setMovies(moviesResponseJson.results);
@@ -46,10 +52,13 @@ export default function Home() {
     <>
     <Header />
       <div className="wrapper">
-            <Movie movies={movie}/>
+      {loading ? <>
+        <Movie movies={movie}/>
             <Serials serials={serials}/>
             <Anime anime={anime} />
             <Books books={books} />
+      </> : 
+      <Loader />}
       </div>
     <Footer />
     </>

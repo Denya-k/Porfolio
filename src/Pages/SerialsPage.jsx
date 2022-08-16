@@ -2,10 +2,10 @@ import React , { useEffect,useState }  from 'react'
 import Layout from '../Components/Layout'
 import Loader from '../Components/Loader'
 import Search from '../Components/Search'
-import TVShowList from './TVShowList'
+import SerialsList from './SerialsList'
 
 
-export default function FilmsPage() {
+export default function SerialsPage() {
     const [movies, setMovies] = useState([]);
     const [searchValue, setSearchValue] = useState("");
     const [loading, setLoading] = useState(false);
@@ -51,7 +51,7 @@ export default function FilmsPage() {
   return (
       <div className="bg-tv">
           <Layout
-           children={loading ? <TVShowList movies={movies} /> : <Loader /> }
+           children={loading ? <SerialsList movies={movies} /> : <Loader /> }
            search={<Search searchValue={searchValue} setSearchValue={setSearchValue}/> }
            />
       </div>

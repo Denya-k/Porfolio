@@ -6,12 +6,12 @@ import {
   Route,
 } from 'react-router-dom';
 import FilmsPage from "./Pages/FilmsPage";
-import TVShow from "./Pages/TVShow";
 import AnimePage from "./Pages/AnimePage";
 import BooksPage from "./Pages/BooksPage";
 import Login from "./Pages/Login/Login";
 import Registration from "./Pages/Login//Registration";
 import ForgotPassword from "./Pages/Login//ForgotPassword";
+import SerialsPage from "./Pages/SerialsPage";
 
 
 
@@ -22,7 +22,7 @@ function App() {
         <Routes>
             <Route path="/Home" element={<Home />} />
             <Route path="/Films" element={ <FilmsPage />} />
-            <Route path="/TVShow" element={ <TVShow /> } />
+            <Route path="/Serials" element={ <SerialsPage /> } />
             <Route path="/Anime" element={ <AnimePage /> } />
             <Route path="/Book" element={ <BooksPage /> } />
             <Route path="/" element={ <Login /> } />

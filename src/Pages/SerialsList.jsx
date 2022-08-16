@@ -3,31 +3,29 @@ import Star from '../img/Star.svg'
 import { Link } from 'react-router-dom'
 
 
-export default function AnimeList(props) {
+export default function SerialsList(props) {
   return (
  
 <div className="container-films">
-{/* <h2>Popular Films</h2> */}
 <div className="films-films__list">
-    {props.anime.map((movie, index) =>
+    {props.movies.map((movie, index) =>
         <div className="films-films__item" key={index}>
         <div className="films-img">
-          <img 
-            className="poster" 
-            src={movie.image_url} 
+          <img className="poster"
+            src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} 
             alt="Movie Poster" 
           />
-          </div>
+        </div>
         <span className="films-films__title-vote_average" >
-          {movie.score} 
-          <img
-           className="star"
+          {movie.vote_average} 
+          <img 
+            className="star" 
             src={Star} 
             alt="Star" 
           /> 
         </span>
         <span className="films-films__title" >
-          {movie.title}
+          {movie.name}
         </span>
         <div className="more"> 
           <Link className="link" to="#">Подробнее</Link>

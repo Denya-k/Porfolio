@@ -12,6 +12,9 @@ import Login from "./Pages/Login/Login";
 import Registration from "./Pages/Login//Registration";
 import ForgotPassword from "./Pages/Login//ForgotPassword";
 import SerialsPage from "./Pages/SerialsPage";
+import InfoFilm from "./Pages/InfoAbout/InfoFilm";
+import InfoSerial from "./Pages/InfoAbout/InfoSerial/InfoSerial";
+import InfoAnime from "./Pages/InfoAbout/InfoAnime/InfoAnime";
 
 
 
@@ -28,6 +31,9 @@ function App() {
             <Route path="/" element={ <Login /> } />
             <Route path="/Registration" element={ <Registration/> } />
             <Route path="/ForgotPassword" element={ <ForgotPassword /> } />
+            <Route path="/InfoFilm/:movieId" element={ <InfoFilm /> } />
+            <Route path="/InfoSerial/:tvId" element={ <InfoSerial /> } />
+            <Route path="/InfoAnime/:animeId" element={ <InfoAnime /> } />
         </Routes>
       </Router>
     </div>

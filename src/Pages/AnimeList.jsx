@@ -9,17 +9,17 @@ export default function AnimeList(props) {
 <div className="container-films">
 {/* <h2>Popular Films</h2> */}
 <div className="films-films__list">
-    {props.anime.map((movie, index) =>
+    {props.anime.map((anime, index) =>
         <div className="films-films__item" key={index}>
         <div className="films-img">
           <img 
             className="poster" 
-            src={movie.image_url} 
+            src={anime.image_url} 
             alt="Movie Poster" 
           />
           </div>
         <span className="films-films__title-vote_average" >
-          {movie.score} 
+          {anime.score} 
           <img
            className="star"
             src={Star} 
@@ -27,10 +27,16 @@ export default function AnimeList(props) {
           /> 
         </span>
         <span className="films-films__title" >
-          {movie.title}
+          {anime.title}
         </span>
         <div className="more"> 
-          <Link className="link" to="#">Подробнее</Link>
+          <Link 
+            key={anime.id}
+            className="link"
+             to={`/InfoAnime/${anime.mal_id}`}
+          >
+            Подробнее
+          </Link>
         </div>
     </div> )}
 </div>

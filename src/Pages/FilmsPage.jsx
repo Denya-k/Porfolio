@@ -24,7 +24,7 @@ const getMoviDefault = async () => {
 } 
     
 const getMoviesRequst = async (searchValue) => {
-    const url =        `https://api.themoviedb.org/3/search/movie?api_key=b52ea45bd4ccc863f946594d20229362&query=${searchValue}`;
+    const url = `https://api.themoviedb.org/3/search/movie?api_key=b52ea45bd4ccc863f946594d20229362&query=${searchValue}`;
     
     if(searchValue) {
       const response = await fetch(url);

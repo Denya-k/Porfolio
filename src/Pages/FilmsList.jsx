@@ -1,15 +1,16 @@
 import React from 'react'
 import Star from '../img/Star.svg'
-import { Link } from 'react-router-dom'
+import { Link} from 'react-router-dom' 
 
 
 export default function FilmsList(props) {
+  
   return (
  
 <div className="container-films" >
 <div className="films-films__list" >
     {props.movies.map((movie, index) =>
-    <div className="films-films__item" key={index} >
+    <div className="films-films__item" key={index}  id={movie.id}>
         <div className="films-img"  >
           <img 
             className="poster"
@@ -24,7 +25,13 @@ export default function FilmsList(props) {
           {movie.title}
         </span>
         <div className="more"> 
-          <Link className="link" to="#">Подробнее</Link>
+          <Link 
+            key={movie.id}
+            className="link" 
+            to={`/InfoFilm/${movie.id}`}
+          >
+            Подробнее
+          </Link>
         </div>
     </div> 
     )}

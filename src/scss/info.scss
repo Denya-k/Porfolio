@@ -1,0 +1,40 @@
+
+.bg-info {
+    background-image: linear-gradient( #6A9BBF, black);
+    width: 100%;
+    min-height: 100vh;
+}
+
+.info {
+    min-height: 100vh;
+    box-sizing: border-box;
+    width: 100%;
+    padding-top: 70px;
+    padding-bottom: 1px;
+    padding-left: 70px;
+    padding-right: 70px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    &-info__poster {
+        margin-right: 35px;
+        width: 300px;
+        height: 170px;
+    }
+    &-info__film {
+        display: flex;
+    }
+    &-info__title {
+        font-weight: 700;
+        font-size: 25px;
+    }
+    &-info__list {
+        list-style: none;
+        padding-left: 10px;
+    }
+    &-info__item {
+        border-bottom: 1px solid #ccc;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}

@@ -16,6 +16,7 @@ import InfoFilm from "./Pages/InfoAbout/InfoFilm";
 import InfoSerial from "./Pages/InfoAbout/InfoSerial/InfoSerial";
 import InfoAnime from "./Pages/InfoAbout/InfoAnime/InfoAnime";
 import InfoBook from "./Pages/InfoAbout/InfoBook/InfoBook";
+import MyProfile from "./Pages/MyProfile";
 
 
 
@@ -36,6 +37,7 @@ function App() {
             <Route path="/InfoSerial/:tvId" element={ <InfoSerial /> } />
             <Route path="/InfoAnime/:animeId" element={ <InfoAnime /> } />
             <Route path="/InfoBook/:bookId" element={ <InfoBook /> } />
+            <Route path="/MyProfile" element={ <MyProfile /> } />
         </Routes>
       </Router>
     </div>

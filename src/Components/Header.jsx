@@ -28,12 +28,23 @@ export default function Header() {
                     <NavLink to="/Book" className="header-nav__link">Books</NavLink>
                 </div>
                 <div className="header-login">
-                    <img 
-                    className="header-login__img"
-                    src={user}
-                    alt="user"
-                    />
-                    <Link to="/" className="header-login__text" onClick={()=> localStorage.clear()}>{localStorage.getItem("name")}</Link>
+
+                    <Link
+                        to="/MyProfile"
+                    >
+                        <img 
+                            className="header-login__img"
+                            src={user}
+                            alt="user"
+                        />
+                    </Link>
+                    <Link 
+                        to="/" 
+                        className="header-login__text" 
+                        onClick={()=> localStorage.clear()}
+                    >
+                        {localStorage.getItem("name")}
+                    </Link>
                 </div>
             </div>
         </header>

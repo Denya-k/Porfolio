@@ -8,7 +8,7 @@ import InfoAboutBook from './InfoAboutBook';
 
 export default function InfoBook() {
     const {bookId} = useParams();
-    const [anime, setAnime] = useState(null);
+    const [book, setBook] = useState(null);
     const [loading, setLoading] = useState(false);
 
 
@@ -16,7 +16,7 @@ export default function InfoBook() {
         fetch(`https://www.googleapis.com/books/v1/volumes/${bookId}`)
             .then(res => res.json())
             .then(data => {
-                setAnime(data)
+                setBook(data)
                 setLoading(true)
             } )
     },[bookId])
@@ -27,7 +27,7 @@ export default function InfoBook() {
         <div className="bg-info">
             <Header />
                 <div className="info">
-                        {loading ?<InfoAboutBook anime={anime} /> : <Loader />}
+                        {loading ?<InfoAboutBook book={book} /> : <Loader />}
                 </div>
             <Footer />
         </div>

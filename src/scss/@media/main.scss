@@ -1,0 +1,8 @@
+@import "vars";
+@import "breakpoints.scss";
+
+.body {
+    @include md {
+        background-color: #ccc;
+    }
+}

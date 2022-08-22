@@ -1,6 +1,7 @@
 import React from 'react'
 import logo from '../img/logo.svg'
 import user from '../img/User.svg'
+import "../scss/@media/main.scss"
 import {
     BrowserRouter as Router,
     Routes,

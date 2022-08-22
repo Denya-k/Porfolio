@@ -1,8 +1,26 @@
 @import "vars";
 @import "breakpoints.scss";
 
-.body {
-    @include md {
-        background-color: #ccc;
-    }
+.header {
+
+    // @media (max-width:  (768px - .2px) ) and (min-width: 640px ) {
+       
+    // }
+
+//    @media (max-width:(768px - .2px)) and (min-width: 640px) {
+//     background-color: red;
+//    }
+
+//    @include md {
+//     background-color: red;
+    
+//    }
+
+//    @include sm {
+//     background-color: red;
+    
+//    }
+@include sm {
+    background-color:red;
+}
 }

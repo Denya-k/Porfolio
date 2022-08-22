@@ -1,0 +1,31 @@
+@mixin list__title {
+    color: #7A77FF;
+    font-size: 25px;
+}
+@mixin list__films {
+   display: flex;
+   margin-top: 20px;
+   border-radius: 10px;
+   overflow: hidden;
+}
+@mixin list__item {
+    width: 33.333333333%;
+    color: white;
+    text-align: center;
+    &:first-child {
+        background-color: #91A9FF;
+        padding-top: 1px;
+        padding-bottom: 1px;
+    }
+    &:nth-child(2) {
+        background-color: #5278FF;
+        padding-top: 1px;
+        padding-bottom: 1px;
+    }
+    &:last-child {
+        background-color: #4E66BE;
+        padding-top: 1px;
+        padding-bottom: 1px;
+    }
+    
+}

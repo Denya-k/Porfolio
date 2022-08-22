@@ -1,3 +1,5 @@
+@import "mixin.scss";
+
 .profile {
     background-image: linear-gradient( #E5E5E5, black);
     width: 100%;
@@ -43,13 +45,148 @@
         }
         h2 {
             margin-top: 0;
-            color: #E5E5E5;
+            color: #6b02d5;
         }
     }
     &-statics__header {
         display: flex;
         justify-content: space-between;
+        margin-bottom: 100px;
     }
 
+
+    &-list__title-bl {
+        @include list__title;
+    }
+    &-list__films-bl {
+        @include list__films;
+    }
+    &-list__item-bl {
+        @include list__item;
+        &:first-child {
+            background-color: #91A9FF;
+        }
+        &:nth-child(2) {
+            background-color: #5278FF;
+        }
+        &:last-child {
+            background-color: #4E66BE;
+        }
+        
+    }
+
+    &-list__title-gr {
+        @include list__title;
+        color: #47C8A1;
+    }
+    &-list__films-gr {
+        @include list__films;
+    }
+    &-list__item-gr {
+        @include list__item;
+        &:first-child {
+            background-color: #47C8A1;
+        }
+        &:nth-child(2) {
+            background-color: #3E9C80;
+        }
+        &:last-child {
+            background-color: #2C6F5B;
+        }
+        
+    }
+
+
+    &-list__title-br {
+        @include list__title;
+        color: #D37659;
+    }
+    &-list__films-br {
+        @include list__films;
+    }
+    &-list__item-br {
+        @include list__item;
+        &:first-child {
+            background-color: #D2836A;
+        }
+        &:nth-child(2) {
+            background-color: #A6644F;
+        }
+        &:last-child {
+            background-color: #8B4029;
+        }
+        
+    }
+
+    &-list__title-vi {
+        @include list__title;
+        color: #8C4CDD;
+    }
+    &-list__films-vi {
+        @include list__films;
+    }
+    &-list__item-vi {
+        @include list__item;
+        &:first-child {
+            background-color: #A16BE4;
+           
+        }
+        &:nth-child(2) {
+            background-color: #8B40E9;
+        }
+        &:last-child {
+            background-color: #602BA0;
+        }
+        
+    }
+
+    &-list__title-ligr {
+        @include list__title;
+        color: #63C379;
+    }
+    &-list__films-ligr {
+        @include list__films;
+    }
+    &-list__item-ligr {
+        @include list__item;
+        &:first-child {
+            background-color: #63C378;
+        }
+        &:nth-child(2) {
+            background-color: #3F8A50;
+        }
+        &:last-child {
+            background-color: #2E5938;
+        }
+        
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    &-list__static {
+        display: flex;
+        &-item {
+            width:33.333333333%;
+            text-align: center;
+            margin-top: 15px;
+            margin-bottom: 25px;
+            color: #666666;
+        }
+    }
 
 }

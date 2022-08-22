@@ -18,7 +18,14 @@ export default function BooksList(props) {
           {movie.volumeInfo.title}
         </span>
         <div className="more"> 
-          <Link className="link" to="#">Подробнее</Link>
+          <Link 
+            key={movie.id}
+            className="link"
+             to={`/InfoBook/${movie.id}`}
+          >
+            Подробнее
+          </Link>
+          
         </div>
     </div> )}
 </div>

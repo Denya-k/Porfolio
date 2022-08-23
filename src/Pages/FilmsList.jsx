@@ -17,13 +17,7 @@ export default function FilmsList(props) {
             src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
             alt="Movie Poster"
           />
-        </div>
-        <span className="films-films__title-vote_average" >
-          {movie.vote_average} <img className="star" src={Star} alt="Star" /> 
-        </span>
-        <span className="films-films__title" >
-          {movie.title}
-        </span>
+
         <div className="more"> 
           <Link 
             key={movie.id}
@@ -33,6 +27,15 @@ export default function FilmsList(props) {
             Подробнее
           </Link>
         </div>
+
+
+        </div>
+        <span className="films-films__title-vote_average" >
+          {movie.vote_average} <img className="star" src={Star} alt="Star" /> 
+        </span>
+        <span className="films-films__title" >
+          {movie.title}
+        </span>
     </div> 
     )}
 </div>

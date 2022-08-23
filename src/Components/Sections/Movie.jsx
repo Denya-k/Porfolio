@@ -1,7 +1,6 @@
 import React from 'react'
-import Star from '../../img/Star.svg'
-
 import { Link } from 'react-router-dom'
+import "../../scss/@media/main.scss"
 
 
 // cb5b43d2 API KEY

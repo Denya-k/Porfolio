@@ -7,6 +7,7 @@ import Footer from '../Components/Footer'
 import '../scss/home.scss'
 import Serials from '../Components/Sections/Serials'
 import Loader from './../Components/Loader'
+import Menu from '../Components/Menu'
 
 
 
@@ -16,6 +17,8 @@ export default function Home() {
   const [anime, setAnime] = useState([]);
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [menuActive, setMenuActive] = useState(false)
+
 
  
   const moviesrUrl = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=b52ea45bd4ccc863f946594d20229362";
@@ -52,8 +55,8 @@ export default function Home() {
 
   return (
     <>
-    <Header />
-      <div className="wrapper">
+    <Header active={menuActive} setActive={setMenuActive} />
+      <div className="wrapper ">
       {loading ? <>
             <Movie movies={movie}/>
             <Serials serials={serials}/>
@@ -61,6 +64,7 @@ export default function Home() {
             <Books books={books} />
       </> : 
       <Loader />}
+     <Menu active={menuActive} setActive={setMenuActive} />
       </div>
     <Footer />
     </>

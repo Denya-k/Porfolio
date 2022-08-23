@@ -46,20 +46,26 @@
 
 // Mobile firts
 
-@mixin lg-d {
+@mixin xl-d {
     @media (max-width: (map-get($breakpoints, xl) - .2px)) {
         @content;
     }
 }
 
-@mixin md-d {
+@mixin lg-d {
     @media (max-width: (map-get($breakpoints, lg) - .2px)) {
         @content;
     }
 }
 
-@mixin sm-d {
+@mixin md-d {
     @media (max-width: (map-get($breakpoints, md) - .2px)) {
+        @content;
+    }
+}
+
+@mixin sm-d {
+    @media (max-width: (map-get($breakpoints, sm) - .2px)) {
         @content;
     }
 }

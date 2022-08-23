@@ -17,6 +17,18 @@ export default function AnimeList(props) {
             src={anime.image_url} 
             alt="Movie Poster" 
           />
+
+        <div className="more"> 
+          <Link 
+            key={anime.id}
+            className="link"
+             to={`/InfoAnime/${anime.mal_id}`}
+          >
+            Подробнее
+          </Link>
+        </div>
+
+
           </div>
         <span className="films-films__title-vote_average" >
           {anime.score} 
@@ -29,15 +41,7 @@ export default function AnimeList(props) {
         <span className="films-films__title" >
           {anime.title}
         </span>
-        <div className="more"> 
-          <Link 
-            key={anime.id}
-            className="link"
-             to={`/InfoAnime/${anime.mal_id}`}
-          >
-            Подробнее
-          </Link>
-        </div>
+        
     </div> )}
 </div>
 </div> 

@@ -15,6 +15,17 @@ export default function SerialsList(props) {
             src={`https://image.tmdb.org/t/p/w300${serials.poster_path}`} 
             alt="Movie Poster" 
           />
+
+        <div className="more"> 
+          <Link 
+            key={serials.id}
+            className="link" 
+            to={`/InfoSerial/${serials.id}`}
+          >
+            Подробнее
+          </Link>
+        </div>
+
         </div>
         <span className="films-films__title-vote_average" >
           {serials.vote_average} 
@@ -27,15 +38,7 @@ export default function SerialsList(props) {
         <span className="films-films__title" >
           {serials.name}
         </span>
-        <div className="more"> 
-          <Link 
-            key={serials.id}
-            className="link" 
-            to={`/InfoSerial/${serials.id}`}
-          >
-            Подробнее
-          </Link>
-        </div>
+        
     </div> )}
 </div>
 </div> 

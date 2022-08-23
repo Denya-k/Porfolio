@@ -1,26 +1,110 @@
 @import "vars";
-@import "breakpoints.scss";
+@import "breakpoints";
 
-.header {
-
-    // @media (max-width:  (768px - .2px) ) and (min-width: 640px ) {
-       
-    // }
-
-//    @media (max-width:(768px - .2px)) and (min-width: 640px) {
-//     background-color: red;
-//    }
-
-//    @include md {
-//     background-color: red;
-    
-//    }
-
-//    @include sm {
-//     background-color: red;
-    
-//    }
-@include sm {
-    background-color:red;
+// home page start
+@include sm-d {
+  .burger__btn {
+    display: block;
+  }
+  .header-nav, .header-login{
+    display: none;
+  }
 }
+
+@include lg-d{
+    .header-wrapper {
+        max-width: 1000px;
+    }
 }
+
+@include md-d {
+    .wrapper-section-top {
+        .container {
+            width: 80%;
+            h2 {
+                text-align: center;
+            }
+        }
+    }
+}
+
+@include sm-d {
+    .wrapper-section-top {
+        .container {
+            width: 200px;
+        }
+    }
+}
+
+// home page end
+
+
+//  other pages start
+@include xl-d {
+    .wrap {
+        #genre__icon {
+            display: block !important;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+        .content {
+            max-width: 95% ; 
+            min-width: 95%;
+            margin: 0 auto;
+        }
+        .genre {
+            display: none;
+        }
+    }
+    
+}
+
+
+@include md-d {
+    .wrap {
+        .content {
+            max-width: 93% ;
+            padding-left: 15px;
+            padding-right: 15px; 
+            margin: 0 auto;
+        }
+        .container-films{
+            .films-films__list {
+                &-films__item {
+                    width: 33% !important;
+                }
+            }
+        }
+        
+    }
+    .container-films
+    .films-films__list
+    .films-films__item {
+        width: 33%;
+    }
+    
+}
+
+@include sm-d {
+    .wrap {
+        .content {
+            max-width: 93% ;
+            padding-left: 5px;
+            padding-right: 5px; 
+            margin: 0 auto;
+        }
+    }
+    .container-films
+    .films-films__list{
+        justify-content: center;
+    }
+    .container-films
+    .films-films__list
+    .films-films__item {
+        width: 200px;
+    }
+}
+// other pages end
+
+

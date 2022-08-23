@@ -13,10 +13,7 @@ export default function BooksList(props) {
            src={movie.volumeInfo.imageLinks ? movie.volumeInfo.imageLinks.thumbnail : ""} 
            alt="Book Poster" 
           />
-        </div>
-        <span className="films-films__title" >
-          {movie.volumeInfo.title}
-        </span>
+
         <div className="more"> 
           <Link 
             key={movie.id}
@@ -25,8 +22,13 @@ export default function BooksList(props) {
           >
             Подробнее
           </Link>
+        </div>
           
         </div>
+        <span className="films-films__title" >
+          {movie.volumeInfo.title}
+        </span>
+        
     </div> )}
 </div>
 </div> 

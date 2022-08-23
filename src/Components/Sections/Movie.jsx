@@ -19,7 +19,13 @@ export default function Movie(props) {
                   <span className="movie section__title" >
                     {movie.title}
                   </span>
-                    <Link className="link" to="#">Подробнее</Link>
+                    <Link 
+                      key={movie.id}
+                      className="link" 
+                      to={`/InfoFilm/${movie.id}`}
+                    >
+                      Подробнее
+                    </Link>
                   </div>
                   <img 
                     src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}

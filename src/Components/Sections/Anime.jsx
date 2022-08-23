@@ -17,7 +17,13 @@ export default function Anime(props) {
                     <span className="anime section__title" >
                       {anime.title}
                     </span>
-                    <Link className="link" to="#">Подробнее</Link>
+                    <Link 
+                      key={anime.id}
+                      className="link"
+                      to={`/InfoAnime/${anime.mal_id}`}
+                    >
+                      Подробнее
+                    </Link>
                   </div>
                 </div> 
                 )}

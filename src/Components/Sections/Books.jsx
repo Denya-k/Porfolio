@@ -19,7 +19,13 @@ export default function Books(props) {
                       <span className="book section__title" >
                         {book.volumeInfo.title}
                       </span>
-                      <Link className="link" to="#">Подробнее</Link>
+                      <Link
+                        key={book.id}
+                        className="link"
+                        to={`/InfoBook/${book.id}`}
+                      >
+                        Подробнее
+                      </Link>
                     </div>
                     
                 </div> )}

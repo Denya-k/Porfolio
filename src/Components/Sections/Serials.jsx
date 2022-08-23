@@ -20,7 +20,13 @@ export default function Serials(props) {
                       <span className="serials section__title" >
                         {serials.name}
                       </span>
-                      <Link className="link" to="#">Подробнее</Link>
+                      <Link  
+                        key={serials.id}
+                        className="link" 
+                        to={`/InfoSerial/${serials.id}`}
+                      >
+                        Подробнее
+                      </Link>
                     </div>
                 </div>
                  )}

@@ -49,7 +49,11 @@ export default function ForgotPassword() {
   return (
     <div className="form-container">
         <form className="form">
-            <img src={logo} alt="My List" />
+            <img 
+                className="logo"
+                src={logo} 
+                alt="My List" 
+            />
             <h1>Forgot Password</h1>
             {(emailDirty && emailError) && <div className="err" >{emailError}</div>}
             <input onChange={e => emailHandler(e)} value={email} onBlur={e => blurHandler(e)} type="email" name="email" placeholder="Enter your email..."></input>

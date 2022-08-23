@@ -82,7 +82,11 @@ export default function Login() {
   return (
     <div className="form-container">
         <form className="form" onSubmit={e=> e.preventDefault()}>
-            <img src={logo} alt="My List" />
+            <img 
+                className="logo" 
+                src={logo} 
+                alt="My List" 
+            />
             <h1>Join</h1>
             {(emailDirty && emailError) && <div className="err" >{emailError}</div>}
             <input onChange={e => emailHandler(e)} value={email} onBlur={e => blurHandler(e)} type="email" name="email" placeholder="Enter your email..."></input>

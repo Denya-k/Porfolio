@@ -29,3 +29,18 @@
     }
     
 }
+
+// media 
+
+@mixin static__block {
+    justify-content: space-around;
+}
+
+@mixin static__item {
+    width: 36px !important;
+    height: 36px !important;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -5,6 +5,7 @@ import Loader from '../../Components/Loader';
 import  '../../scss/info.scss';
 import Info from './Info';
 import {useParams} from 'react-router-dom'
+import Menu from '../../Components/Menu';
 
 
 
@@ -12,6 +13,8 @@ export default function InfoFilm() {
     const {movieId} = useParams();
     const [movie, setMovie] = useState(null);
     const [loading, setLoading] = useState(false);
+    const [menuActive, setMenuActive] = useState(false)
+
 
 
 
@@ -28,10 +31,11 @@ export default function InfoFilm() {
 
    return(
         <div className="bg-info">
-            <Header />
+            <Header active={menuActive} setActive={setMenuActive} />
                 <div className="info">
                     {loading ?<Info movie={movie} /> : <Loader />}
                 </div>
+                <Menu active={menuActive} setActive={setMenuActive} />
             <Footer />
         </div>
    );

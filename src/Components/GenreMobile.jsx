@@ -3,10 +3,12 @@ import React from 'react'
 export default function GenreMobile({active, setActive}) {
   return (
     <div className={active ? "genre-mobile activeGen" : "genre-mobile"}>
-        <h3
-            className="genreClose"
-            onClick={()=> setActive(false)}
-        >Genre x</h3>
+        <h3 className="genreClose">
+          Genre 
+        <span onClick={()=> setActive(false)}>
+          &#x2718;
+        </span>
+        </h3>
 
         <hr />
 

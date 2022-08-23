@@ -168,7 +168,13 @@
 
     }
     .genreClose {
-        cursor: pointer;
+        span {
+            cursor: pointer;
+        }
+        display: flex;
+        justify-content: space-between;
+        padding-right: 2px;
+        align-items: center;
     }
 }
 // .blur__genre {

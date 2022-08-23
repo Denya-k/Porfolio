@@ -108,7 +108,11 @@ export default function Registration() {
   return (
     <div className="form-container">
         <form className="form">
-            <img src={logo} alt="My List" />
+            <img
+                className="logo"
+                src={logo} 
+                alt="My List" 
+            />
             <h1>Registration</h1>
 
             {(emailDirty && emailError) && <div className="err" >{emailError}</div>}

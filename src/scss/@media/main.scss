@@ -1,5 +1,6 @@
 @import "vars";
 @import "breakpoints";
+@import "../mixin.scss";
 
 // home page start
 @include sm-d {
@@ -20,7 +21,7 @@
 @include md-d {
     .wrapper-section-top {
         .container {
-            width: 80%;
+            width: 90%;
             h2 {
                 text-align: center;
             }
@@ -106,5 +107,115 @@
     }
 }
 // other pages end
+
+// info abou film and serials
+
+@include md-d {
+    .info {
+        padding:  0 !important;
+        padding-top: 25px !important;
+        padding-bottom: 25px !important;
+    }
+    .info-about {
+        h1 {
+            text-align: center;
+        }
+        .info-info__film {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        img {
+            display: block;
+            margin-right: 0;
+            margin-bottom: 20px;
+        }
+    }
+    .description {
+        padding: 0 20px;
+    }
+}
+
+// my profile 
+
+@include lg-d {
+    .main  {
+        padding: 40px 15px !important;
+        width: 90% !important;
+    }
+    .profile-info {
+        width: 300px !important;
+    }
+}
+
+@include md-d {
+    .profile-list__films-bl,
+    .profile-list__films-br,
+    .profile-list__films-vi,
+    .profile-list__films-ligr {
+        @include static__block;
+    }
+    .profile-list__item-bl,
+    .profile-list__item-br,
+    .profile-list__item-vi,
+    .profile-list__item-ligr {
+        @include static__item;
+    }
+    .profile-statics .profile-statics__header {
+        margin-bottom: 20px ;
+    }
+    
+    .profile-info {
+        width: 50% !important;
+    }
+
+}
+@include sm-d {
+    .main {
+        // flex-direction: column;
+        padding-left: 2px !important;
+        padding-right: 2px !important;
+    } 
+    .profile-info {
+        margin-right: 5px !important;
+    }
+    .profile-statics {
+        h3 {
+            font-size: 18px;
+        }
+        .profile-list__static-item {
+            font-size: 12px;
+        }
+    }
+}
+
+// forms Login 
+
+@include md-d {
+    .form-container {
+        .form {
+            padding: 40px 100px !important;
+        }
+        .logo {
+            width: 50%;
+            margin: 0 auto;
+        }
+    }
+    
+}
+
+@include sm-d {
+    .form-container {
+        .form {
+            padding: 20px 50px !important;
+        }
+        img {
+            width: 20%;
+        }
+    }
+    
+}
+// forms Login end
+
 
 

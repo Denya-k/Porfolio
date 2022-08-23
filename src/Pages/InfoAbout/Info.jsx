@@ -1,8 +1,9 @@
 import React from 'react'
 
 export default function Info({movie}) {
+
   return (
-        <>
+        <div className="info-about">
             <h1>Info About Films</h1>
             <div className="info-info__film">
                 <img 
@@ -42,8 +43,11 @@ export default function Info({movie}) {
                     </ul>
                 </div>
             </div>
-            <h3>Description</h3>
-            <p>{movie.overview}</p>
-        </>
+            <div className="description">
+                <h3>Description</h3>
+                <p>{movie.overview}</p>
+            </div>
+        
+        </div>
         );
 }

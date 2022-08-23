@@ -1,18 +1,21 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
 import Footer from '../Components/Footer'
 import Header from '../Components/Header'
+import Menu from '../Components/Menu'
 import "../scss/profile.scss"
 
 export default function MyProfile() {
+  const [menuActive, setMenuActive] = useState(false)
   return (
     <div className="profile">
-    <Header />
+        <Header active={menuActive} setActive={setMenuActive} />
+
         <div className="main wrapper">
             <div className="profile-info">
                 <img 
                     src={require("../img/MyProfile.svg").default}
-                    alt="My Photo" 
+                    alt="My Profile" 
                 />
                 <span className="profile-info__name">First name</span>
                 <span className="profile-info__sur_name">Surename</span>
@@ -92,6 +95,7 @@ export default function MyProfile() {
 
             </div>
         </div>
+        <Menu active={menuActive} setActive={setMenuActive} />
     <Footer />
     </div>
   )

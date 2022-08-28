@@ -13,14 +13,12 @@
         color: red;
         font-size: 15px;
     }
-    // background-color: white;
     background-image: linear-gradient(#4E66BE, black);
     display: flex;
     flex-direction: column;
     padding: 50px 170px;
     box-sizing: border-box;
     width: 611px;
-    // height: 630px;
     border-radius: 30px;
     text-align: center;
     input {
@@ -32,7 +30,6 @@
         border: none;
     }
     .icon {
-        // background-color: black;
         a {
             margin-right: 5px;
         }
@@ -52,7 +49,6 @@
         }
         .button {
             outline: none;
-            // background-color: #6A9BBF;
             border: none;
             border-radius: 30px;
             padding: 10px 20px;

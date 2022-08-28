@@ -1,4 +1,3 @@
-// @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
 // body
 body {
     background-image: linear-gradient( #602BA0, black);
@@ -57,7 +56,10 @@ body {
         font-size: 20px;
         text-decoration: none;
         color: white;
-        cursor: pointer;
+        &:hover {
+            cursor: pointer;
+            color: #9f8dee;
+        }
     }
     &-login {
         display: flex;

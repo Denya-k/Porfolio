@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import noImage from "../img/no_image.jpg"
 
 export default function BooksList(props) {
   return (
@@ -10,7 +11,7 @@ export default function BooksList(props) {
         <div className="films-films__item" key={index}>
         <div className="films-img">
           <img className="poster"
-           src={movie.volumeInfo.imageLinks ? movie.volumeInfo.imageLinks.thumbnail : ""} 
+           src={movie.volumeInfo.imageLinks ? movie.volumeInfo.imageLinks.thumbnail :  `${noImage}`} 
            alt="Book Poster" 
           />
 

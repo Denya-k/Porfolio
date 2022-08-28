@@ -55,7 +55,7 @@ export default function Login() {
         const passwordUser = localStorage.getItem("password")
 
         if(emailUser ===  email && passwordUser === password) {
-        return  navigate("/Home", {replace: true})
+        return  navigate("/", {replace: true})
 
         } else if(emailUser !==  email) {
             setEmailError("Непарвильный email!")

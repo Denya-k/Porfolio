@@ -19,7 +19,7 @@ export default function Header({active, setActive}) {
                     />
                 </div>
                     <div className="header-nav">
-                        <NavLink to="/Home" className="header-nav__link">Home</NavLink>
+                        <NavLink to="/" className="header-nav__link">Home</NavLink>
                         <NavLink to="/Films" className="header-nav__link">Films</NavLink>
                         <NavLink to="/Serials" className="header-nav__link">Serials</NavLink>
                         <NavLink to="/Anime" className="header-nav__link">Anime</NavLink>
@@ -38,11 +38,14 @@ export default function Header({active, setActive}) {
                             />
                         </Link>
                         <Link 
-                            to="/" 
+                            to={localStorage.getItem("name") ? "/MyProfile" :  "/Login" }
                             className="header-login__text" 
-                            onClick={()=> localStorage.clear()}
                         >
-                            {localStorage.getItem("name")}
+                            {localStorage.getItem("name") ? 
+                                localStorage.getItem("name")
+                            : 
+                                "Login"
+                            }
                         </Link>
                     </div>
                 <div 

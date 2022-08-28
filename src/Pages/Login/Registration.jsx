@@ -60,7 +60,6 @@ export default function Registration() {
     const repeatPasswordHandler = (e) => {
         setRepeatPassword(e.target.value)
         if(e.target.value.length != password.length || e.target.value != password ) {
-        // if(e.target.value != password ) {
             setRepeatPasswordError("Пароль не совподает")
         } else {
             setRepeatPasswordError("")
@@ -71,9 +70,6 @@ export default function Registration() {
         setName(e.target.value)
         if(e.target.value.length < 3 ) {
             setNameError("Слишком короткое имя")
-            // if(!e.target.value.length) {
-            //     setNameError("Name не может быть пустым")
-            // }
         } else {
             setNameError("")
         }
@@ -128,8 +124,8 @@ export default function Registration() {
             <input onChange={e => nameHandler(e)} value={name} onBlur={e => blurHandler(e)} type="text" name="name" placeholder="User Name"></input>
             
             <div className="registraition__content">
-                <Link to="/">Log in</Link>
-                <Link to="/"><button onClick={createUser} disabled={!formValid} className={formValid ? "button form-valid" : "button"} type="submit">Registretion</button></Link>
+                <Link to="/Login">Log in</Link>
+                <Link to="/Login"><button onClick={createUser} disabled={!formValid} className={formValid ? "button form-valid" : "button"} type="submit">Registretion</button></Link>
             </div>
         </form>
     </div>

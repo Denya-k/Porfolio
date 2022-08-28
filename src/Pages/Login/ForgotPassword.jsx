@@ -32,8 +32,6 @@ export default function ForgotPassword() {
         }
     }
 
-   
-    
     const blurHandler = (e) => {
         switch (e.target.name) {
             case "email": 
@@ -43,8 +41,6 @@ export default function ForgotPassword() {
 
         }
     }
-
-
 
   return (
     <div className="form-container">
@@ -59,8 +55,8 @@ export default function ForgotPassword() {
             <input onChange={e => emailHandler(e)} value={email} onBlur={e => blurHandler(e)} type="email" name="email" placeholder="Enter your email..."></input>
             <span className="registratiom-massage">We will send you massage to set or reset your new password</span>
             <div className="registraition__content">
-                <Link to="/">Login</Link>
-                <Link to="/"><button disabled={!formValid} className={formValid ? "button form-valid" : "button"} type="submit">Send</button></Link>
+                <Link to="/Login">Login</Link>
+                <Link to="/Login"><button disabled={!formValid} className={formValid ? "button form-valid" : "button"} type="submit">Send</button></Link>
             </div>
         </form>
     </div>

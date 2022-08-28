@@ -21,7 +21,7 @@ export default function Menu({active, setActive}) {
                     />
                 </Link>
                 <Link 
-                    to="/" 
+                    to="/MyProfile" 
                     className="header-login__text" 
                     onClick={()=> localStorage.clear()}
                 >
@@ -32,7 +32,7 @@ export default function Menu({active, setActive}) {
 
                 <div className="menu-nav">
                     <NavLink 
-                        to="/Home" 
+                        to="/" 
                         className="menu-nav__link"
                     >
                         Home

@@ -1,20 +1,25 @@
 import React from 'react'
 import Star from '../img/Star.svg'
 import { Link } from 'react-router-dom'
+import noImage from "../img/no_image.jpg"
 
 
 export default function AnimeList(props) {
   return (
  
 <div className="container-films">
-{/* <h2>Popular Films</h2> */}
 <div className="films-films__list">
     {props.anime.map((anime, index) =>
         <div className="films-films__item" key={index}>
         <div className="films-img">
           <img 
             className="poster" 
-            src={anime.image_url} 
+            src={anime.image_url ? 
+              `${anime.image_url}`
+            :
+              `${noImage}`
+        
+            } 
             alt="Movie Poster" 
           />
 

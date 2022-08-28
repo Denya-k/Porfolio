@@ -25,12 +25,12 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
-            <Route path="/Home" element={<Home />} />
+            <Route path="/" element={<Home />} />
             <Route path="/Films" element={ <FilmsPage />} />
             <Route path="/Serials" element={ <SerialsPage /> } />
             <Route path="/Anime" element={ <AnimePage /> } />
             <Route path="/Book" element={ <BooksPage /> } />
-            <Route path="/" element={ <Login /> } />
+            <Route path="/Login" element={ <Login /> } />
             <Route path="/Registration" element={ <Registration/> } />
             <Route path="/ForgotPassword" element={ <ForgotPassword /> } />
             <Route path="/InfoFilm/:movieId" element={ <InfoFilm /> } />

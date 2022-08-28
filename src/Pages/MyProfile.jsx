@@ -35,6 +35,7 @@ export default function MyProfile() {
                         <h2>{localStorage.getItem("name")}</h2>
                     </div>
                     <Link to="#">change password</Link>
+                    <Link to="/Login" onClick={()=> localStorage.clear()}>Exit</Link>
                 </div>
 
                 <div className="profile-list__film">

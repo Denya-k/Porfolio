@@ -1,6 +1,7 @@
 import React from 'react'
 import Star from '../img/Star.svg'
 import { Link} from 'react-router-dom' 
+import noImage from "../img/no_image.jpg"
 
 
 export default function FilmsList(props) {
@@ -12,9 +13,15 @@ export default function FilmsList(props) {
     {props.movies.map((movie, index) =>
     <div className="films-films__item" key={index}  id={movie.id}>
         <div className="films-img"  >
+          
           <img 
             className="poster"
-            src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
+            src={movie.poster_path ? 
+              `https://image.tmdb.org/t/p/w300${movie.poster_path}`
+            :
+              `${noImage}`
+        
+            }
             alt="Movie Poster"
           />
 

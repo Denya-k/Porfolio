@@ -54,6 +54,13 @@
         display: flex;
         justify-content: space-between;
         margin-bottom: 100px;
+        a {
+            text-decoration: none;
+            color: rgb(102, 102, 102);
+            &:hover {
+                color: #6b02d5;
+            }
+        }
     }
 
 

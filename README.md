@@ -1,3 +1,5 @@
+A site to search for movies, series, anime and books of your choice. You can also register and then log in. Then your profile page will open for you, the data is stored in the Local Storage until you log out of your account. The main technologies are React and Redux Toolkit, and 4 different APIs are also used.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
